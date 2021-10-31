@@ -1,0 +1,31 @@
+.pexel--gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pexel--gallery .pexel--gallery__image {
+  background-color: white;
+  padding: 0.25rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 8px 8px -4px var(--mid-gray);
+}
+
+.pexel--gallery .pexel--gallery__image img {
+  width: 100%;
+  height: auto;
+}
+
+.pexel--gallery .pexel--gallery__image figcaption a {
+  text-decoration: none;
+  color: var(--dark-gray);
+  font-weight: 100;
+  text-align: center;
+  display: block;
+}
+
+.pexel--gallery .pexel--gallery__image figcaption a:hover,
+.pexel--gallery .pexel--gallery__image figcaption a:focus {
+  text-decoration: underline;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from './Image.js';
+import './gallery.css';
 
 class Gallery extends React.Component {
   constructor(props) {

@@ -1,0 +1,36 @@
+.pexel--search {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  max-width: 60rem;
+}
+
+.pexel--search input {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 400;
+  width: 100%;
+  padding: 0.2rem;
+  border: 0.18rem solid var(--dark-gray);
+}
+
+.pexel--search input:focus:focus-visible {
+  outline: none;
+  border: 0.2rem solid var(--dark-gray);
+}
+
+.pexel--search button {
+  background-color: var(--dark-teal);
+  color: white;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 1rem 2.25rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out;
+}
+
+.pexel--search button:hover,
+.pexel--search button:focus {
+  background-color: var(--light-teal);
+}

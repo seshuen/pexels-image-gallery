@@ -1,4 +1,5 @@
 import React from 'react';
+import './pagination.css';
 
 class Pagination extends React.Component {
   constructor(props) {
@@ -75,9 +76,9 @@ class Pagination extends React.Component {
         >
           Previous
         </button>
-        <span className="pexel-pagination__text">
-          Show {(this.state.currentPage - 1) * this.state.perPage + 1} -{' '}
-          {this.state.currentPage * this.state.perPage} of{' '}
+        <span className="pexel--pagination__text">
+          Showing {(this.state.currentPage - 1) * this.state.perPage + 1} -{' '}
+          {this.state.currentPage * this.state.perPage} results of{' '}
           {this.state.totalResults}
         </span>
         <button

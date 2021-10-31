@@ -96,6 +96,7 @@ class App extends React.Component {
       this.state.searchTerm !== '' ? this.handleSearch : this.updateImageList;
     return (
       <div className="App">
+        <h1> Pexel Image Gallery</h1>
         {this.state.loading ? (
           <div>Loading...</div>
         ) : this.state.error !== '' ? (

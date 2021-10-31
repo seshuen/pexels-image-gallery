@@ -1,4 +1,5 @@
 import React from 'react';
+import './search.css';
 
 class Search extends React.Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class Search extends React.Component {
       <div className="pexel--search">
         <input
           type="text"
+          placeholder="Search for images"
           value={this.state.searchTerm}
           onChange={this.updateSearchTerm}
         />
