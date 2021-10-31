@@ -19,4 +19,23 @@ async function getCuratedImages(pageNumber = 1, perPage = 10) {
   }
 }
 
-export default getCuratedImages;
+async function searchForImages(searchTerm, pageNumber = 1, perPage = 10) {
+  try {
+    const data = await fetch(
+      `https://api.pexels.com/v1/search?query=${searchTerm}&page=${pageNumber}&per_page=${perPage}`,
+      {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          Authorization: process.env.REACT_APP_PEXELS_API_KEY,
+        },
+      }
+    );
+    const response = await data.json();
+    return response;
+  } catch (e) {
+    throw e;
+  }
+}
+
+export { getCuratedImages, searchForImages };

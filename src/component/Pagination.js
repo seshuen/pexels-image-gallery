@@ -9,20 +9,31 @@ class Pagination extends React.Component {
       totalResults: 0,
       hasPrevious: false,
       hasNext: false,
+      searchTerm: '',
     };
     this.handlePreviousPage = this.handlePreviousPage.bind(this);
     this.handleNextPage = this.handleNextPage.bind(this);
   }
 
   handlePreviousPage() {
-    if (!this.hasPrevious) {
+    if (!this.state.hasPrevious && this.state.searchTerm === '') {
       this.props.handlePagination(this.state.currentPage - 1);
+    } else if (!this.state.hasPrevious && this.state.searchTerm !== '') {
+      this.props.handlePagination(
+        this.state.searchTerm,
+        this.state.currentPage - 1
+      );
     }
   }
 
   handleNextPage() {
-    if (!this.hasNext) {
+    if (!this.state.hasNext && this.state.searchTerm === '') {
       this.props.handlePagination(this.state.currentPage + 1);
+    } else if (!this.state.hasNext && this.state.searchTerm !== '') {
+      this.props.handlePagination(
+        this.state.searchTerm,
+        this.state.currentPage + 1
+      );
     }
   }
 
@@ -33,17 +44,22 @@ class Pagination extends React.Component {
       perPage: this.props.perPage,
       hasNext: !this.props.hasNextPage,
       hasPrevious: !this.props.hasPreviousPage,
+      searchTerm: this.props.searchTerm,
     });
   }
 
   componentDidUpdate() {
-    if (this.props.currentPage !== this.state.currentPage) {
+    if (
+      this.props.currentPage !== this.state.currentPage ||
+      this.props.searchTerm !== this.state.searchTerm
+    ) {
       this.setState({
         currentPage: this.props.currentPage,
         totalResults: this.props.totalResults,
         perPage: this.props.perPage,
         hasNext: !this.props.hasNextPage,
         hasPrevious: !this.props.hasPreviousPage,
+        searchTerm: this.props.searchTerm,
       });
     }
   }
