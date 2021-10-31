@@ -47,3 +47,4 @@ The total time spent on this project was somewhere between 4 - 6 hrs in two days
 1. Display the image gallery in a masonry style like a pinterest or similar website.
 2. Open the image in a modal on click.
 3. Create placeholder for image component to should empty element until the image is loaded.
+4. Handle search clearance and add filters.

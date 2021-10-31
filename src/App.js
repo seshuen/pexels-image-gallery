@@ -94,6 +94,7 @@ class App extends React.Component {
   render() {
     let handlePagination =
       this.state.searchTerm !== '' ? this.handleSearch : this.updateImageList;
+
     return (
       <div className="App">
         <h1> Pexel Image Gallery</h1>
@@ -104,16 +105,27 @@ class App extends React.Component {
         ) : (
           <div className="pexel">
             <Search handleSearch={this.handleSearch} />
-            <Gallery images={this.state.images} />
-            <Pagination
-              hasPreviousPage={this.state.hasPreviousPage}
-              hasNextPage={this.state.hasNextPage}
-              currentPage={this.state.currentPage}
-              totalResults={this.state.totalResults}
-              perPage={this.state.perPage}
-              searchTerm={this.state.searchTerm}
-              handlePagination={handlePagination}
-            />
+            {this.state.images.length < 1 ? (
+              <div className="pexel--noimage">
+                <div className="pexel--error">No Image to display.</div>
+                <button type="button" onClick={this.updateImageList}>
+                  Search curated resouces
+                </button>
+              </div>
+            ) : (
+              <div className="pexel--container">
+                <Gallery images={this.state.images} />
+                <Pagination
+                  hasPreviousPage={this.state.hasPreviousPage}
+                  hasNextPage={this.state.hasNextPage}
+                  currentPage={this.state.currentPage}
+                  totalResults={this.state.totalResults}
+                  perPage={this.state.perPage}
+                  searchTerm={this.state.searchTerm}
+                  handlePagination={handlePagination}
+                />
+              </div>
+            )}
           </div>
         )}
       </div>

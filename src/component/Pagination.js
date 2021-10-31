@@ -66,6 +66,10 @@ class Pagination extends React.Component {
   }
 
   render() {
+    let currentRange =
+      this.state.currentPage * this.state.perPage > this.state.totalResults
+        ? this.state.totalResults
+        : this.state.currentPage * this.state.perPage;
     return (
       <div className="pexel--pagination">
         <button
@@ -78,8 +82,7 @@ class Pagination extends React.Component {
         </button>
         <span className="pexel--pagination__text">
           Showing {(this.state.currentPage - 1) * this.state.perPage + 1} -{' '}
-          {this.state.currentPage * this.state.perPage} results of{' '}
-          {this.state.totalResults}
+          {currentRange} results of {this.state.totalResults}
         </span>
         <button
           type="button"

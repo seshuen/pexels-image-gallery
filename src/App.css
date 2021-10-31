@@ -14,3 +14,17 @@ h1 {
 .pexel {
   width: 100%;
 }
+
+.pexel--noimage {
+  margin-top: 2rem;
+}
+
+.pexel--noimage button {
+  background: transparent;
+  color: var(--dark-gray);
+  font-size: 1.5rem;
+  text-decoration: underline;
+  border: none;
+  padding: 0.2rem;
+  cursor: pointer;
+}
