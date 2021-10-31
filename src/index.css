@@ -5,6 +5,7 @@
   --dark-teal: #004d40;
   --disabled: #80cbc4;
   --light-teal: #00796b;
+  --error-bg: #ef5350;
 }
 body {
   margin: 0;
